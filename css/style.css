@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap');
+ 
+:root{
+    --mainColor: #1C3F60;
+    --blackColor: #0B1320;
+    --fontColor: #afc1d0;
+    --BabyColor: #B1D4E0;
+    --overLayColor : #1c3f6084 ;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: var(--fontColor);
+}
+body{
+    background-color: var(--blackColor);
+    font-family: "Cairo", sans-serif;
+    color: var(--fontColor);
+}
+.app{
+    padding: 10px;
+}
+.app .header h1{ 
+    text-align: center;
+}
+.app .cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 300px);
+    justify-content: center;
+    gap: 10px;
+    margin: 15px;
+}
+.app .card-style{
+    border-radius: 5px;
+    background-color: #b1d4e01a;
+    padding: 10px 20px 5px;
+    display: inline-block;
+}
+.cards .add{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.cards .add .bx-plus{
+    background-color: var(--mainColor);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    line-height: 40px;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+/* .....  */
+.card_content p{
+    font-size: 18px;
+    font-weight: 300;
+    height: 70px;
+    overflow-y: auto;
+}
+.card_details{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    border-top: 1px solid var(--BabyColor);
+}
+.card_details span{
+    font-size: 12px;
+}
+.card_details .menu-app{
+    position: relative;
+}
+.card_details .menu-app .three_dots{
+    font-size: 28px;
+    cursor: pointer;
+}
+.card_details .menu-app .popup_menu{
+    list-style: none;
+    position: absolute;
+    width: 100px;
+    background-color: var(--fontColor);
+    color: var(--mainColor);
+    border-radius: 4px;
+    padding-top: 5px;
+    text-align: center;
+    transform: scale(0);
+    transition: .2s ease-in;
+}
+.card_details .menu-app:hover>.popup_menu{
+    transform: scale(1);
+}
+.card_details .menu-app .popup_menu li{
+    cursor: pointer;
+    padding: 3px 10px;
+    margin-bottom: 5px;
+    transition: .2s ease-in;
+    color: var(--mainColor);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.popup_menu li i{
+    color: #0B1320;
+    padding-left: 3px;
+}
+.popup_menu li:nth-child(2) i{
+    color: rgb(90, 11, 11);
+}
+.card_details .menu-app .popup_menu li:hover{
+    background-color: #00000070;
+}
+/* ---------------popup_app-------------  */
+.popup_app{
+    background-color: var(--overLayColor);
+    position: fixed;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    display: none;
+}
+
+.popup_app.open{
+    display: grid;
+}
+.popup_app .popup_add{
+    background-color: var(--blackColor);
+    padding: 15px 20px;
+    border-radius: 5px; 
+    position: relative;
+}
+.popup_app .popup_add .popup_header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+}
+.popup_app .popup_add .popup_header h4{
+    color: #fff;
+}
+.popup_app .popup_add .popup_header i{
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+    position: absolute;
+    top : 5px;
+    left: 5px;
+}
+
+.popup_app .popup_add  .popup_form > div :where(input , textarea)  {
+    display: block;
+    width: 100%;
+    padding: 7px;
+    outline-width: 0;
+    font-size: 18px;
+    color: var(--fontColor);
+    background-color: transparent;
+    border: 1px solid #fff;
+    border-radius: 4px;
+}
+textarea{
+    resize: none;
+    height: 120px;
+}
+.popup_add  .popup_form > button{
+    display: block;
+    margin: 15px 0 5px;
+    width: 100%;
+    padding: 7px 0;
+    cursor: pointer;
+    background-color: var(--mainColor);
+    border-radius: 4px;
+    outline-width: 0;
+    border: none;
+    font-weight: bold;
+    text-transform: capitalize;
+    box-sizing:border-box;
+    transition: border .2s ease;
+}
+.popup_add  .popup_form > button:hover{
+    border: 1px solid var(--BabyColor);
+}
